@@ -13,4 +13,9 @@ public class KeyboardUtil {
         return KEYBOARD.nextLine();
     }
 
+    public static double getInputDouble(String message) {
+        System.out.println(message);
+        String inputString = KEYBOARD.nextLine();
+        return Double.parseDouble(inputString);
+    }
 }
