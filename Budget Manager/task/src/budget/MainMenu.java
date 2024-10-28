@@ -1,5 +1,7 @@
 package budget;
 
+import budget.Utility.KeyboardUtil;
+
 import java.util.Scanner;
 
 public class MainMenu {

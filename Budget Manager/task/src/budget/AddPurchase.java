@@ -1,6 +1,6 @@
 package budget;
 
-import java.util.Scanner;
+import budget.Utility.KeyboardUtil;
 
 public class AddPurchase {
 
