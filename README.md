@@ -9,4 +9,15 @@ It should be displayed as follows: Total: $23.00
 
 For this i have created the Analyzer class to handle the purchases and the main class to handle the user input.
 
+## Task 2 objective
+A menu is added to create flexibility and functionality. The menu consist out of 5 items:
+1. Add income
+2. Add purchase
+3. Show list of purchases
+4. Balance
+5. Exit
+
+For this i have created the MainMenu class to handle the menu.
+The TransactionManager class is created to handle the transactions and the balance.
+
 
