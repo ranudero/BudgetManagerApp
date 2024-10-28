@@ -19,4 +19,7 @@ public class Purchase {
         return price;
     }
 
+    public PurchaseType getType() {
+        return type;
+    }
 }

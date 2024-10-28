@@ -24,4 +24,9 @@ public class KeyboardUtil {
         String inputString = KEYBOARD.nextLine();
         return Integer.parseInt(inputString);
     }
+
+    public static int getInputInt() {
+        String inputString = KEYBOARD.nextLine();
+        return Integer.parseInt(inputString);
+    }
 }

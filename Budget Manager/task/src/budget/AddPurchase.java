@@ -18,8 +18,6 @@ public class AddPurchase {
         double purchasePrice = KeyboardUtil.getInputDouble("Enter its price:");
 
         Purchase purchase = new Purchase(purchaseName, purchasePrice, type);
-
-        //TODO ADD PURCHASE TO THE LIST
         manager.registerPurchase(purchase);
 
     }

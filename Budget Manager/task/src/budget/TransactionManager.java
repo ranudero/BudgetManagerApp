@@ -33,18 +33,8 @@ public class TransactionManager {
         return balance;
     }
 
-    public double getTotalExpenses() {
-        return totalExpenses;
-    }
-
-    public double getTotalIncome() {
-        return totalIncome;
-    }
-
     public void getPurchases() {
-        if (purchases.isEmpty()) {
-            System.out.println("\nPurchase list is empty");
-        } else {
+
             System.out.println("\nPurchase list:");
             for (Purchase purchase : purchases) {
                 System.out.print(purchase.getName());
@@ -52,7 +42,30 @@ public class TransactionManager {
                 System.out.println(purchase.getPrice());
             }
             System.out.println("Total sum: $" + totalExpenses);
-        }
 
+    }
+
+    public void getPurchasesByType(PurchaseType type) {
+        ArrayList<Purchase> purchasesByType = new ArrayList<>();
+        for (Purchase purchase : purchases) {
+            if (purchase.getType() == type) {
+                purchasesByType.add(purchase);
+            }
+        }
+        if (purchasesByType.isEmpty()) {
+            System.out.println("\nPurchase list is empty!");
+        } else {
+            System.out.println("\n" + type.getName() + ":");
+            for (Purchase purchase : purchasesByType) {
+                System.out.print(purchase.getName());
+                System.out.print(" $");
+                System.out.println(purchase.getPrice());
+            }
+            System.out.println("Total sum: $" + purchasesByType.stream().mapToDouble(Purchase::getPrice).sum());
+        }
+    }
+
+    public boolean hasPurchases() {
+        return !purchases.isEmpty();
     }
 }

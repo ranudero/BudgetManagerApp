@@ -7,10 +7,13 @@ import java.util.Scanner;
 public class MainMenu {
     private final TransactionManager manager;
     private final PurchaseMenu purchaseMenu;
+    private final ListOfPurchasesMenu listOfPurchasesMenu;
 
     public MainMenu() {
         manager = new TransactionManager();
         purchaseMenu = new PurchaseMenu(manager);
+        listOfPurchasesMenu = new ListOfPurchasesMenu(manager);
+
     }
 
     public void show() {
@@ -34,11 +37,9 @@ public class MainMenu {
                 break;
             case 2:
                 purchaseMenu.show();
-//                AddPurchase addPurchase = new AddPurchase(manager);
-//                addPurchase.purchaseInput();
                 break;
             case 3:
-                manager.getPurchases();
+                listOfPurchasesMenu.show();
                 break;
             case 4:
                 System.out.println("\nBalance: $" + manager.getBalance());
