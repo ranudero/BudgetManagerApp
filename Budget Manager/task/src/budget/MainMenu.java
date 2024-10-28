@@ -6,9 +6,11 @@ import java.util.Scanner;
 
 public class MainMenu {
     private final TransactionManager manager;
+    private final PurchaseMenu purchaseMenu;
 
     public MainMenu() {
         manager = new TransactionManager();
+        purchaseMenu = new PurchaseMenu(manager);
     }
 
     public void show() {
@@ -31,8 +33,9 @@ public class MainMenu {
                 manager.registerIncome(income);
                 break;
             case 2:
-                AddPurchase addPurchase = new AddPurchase(manager);
-                addPurchase.purchaseInput();
+                purchaseMenu.show();
+//                AddPurchase addPurchase = new AddPurchase(manager);
+//                addPurchase.purchaseInput();
                 break;
             case 3:
                 manager.getPurchases();

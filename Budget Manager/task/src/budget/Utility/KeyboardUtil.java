@@ -18,4 +18,10 @@ public class KeyboardUtil {
         String inputString = KEYBOARD.nextLine();
         return Double.parseDouble(inputString);
     }
+
+    public static int getInputInt(String message) {
+        System.out.println(message);
+        String inputString = KEYBOARD.nextLine();
+        return Integer.parseInt(inputString);
+    }
 }

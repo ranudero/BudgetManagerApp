@@ -4,7 +4,8 @@ public enum PurchaseType {
     FOOD("Food"),
     CLOTHES("Clothes"),
     ENTERTAINMENT("Entertainment"),
-    OTHER("Other");
+    OTHER("Other"),
+    BACK("Back");
 
     private final String name;
 

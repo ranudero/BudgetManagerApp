@@ -5,9 +5,11 @@ import budget.Utility.KeyboardUtil;
 public class AddPurchase {
 
     private final TransactionManager manager;
+    private final PurchaseType type;
 
-    public AddPurchase(TransactionManager manager) {
+    public AddPurchase(TransactionManager manager, PurchaseType type) {
         this.manager = manager;
+        this.type = type;
     }
 
     public void purchaseInput(){
@@ -15,7 +17,7 @@ public class AddPurchase {
         String purchaseName = KeyboardUtil.getInputString("\nEnter purchase name:");
         double purchasePrice = KeyboardUtil.getInputDouble("Enter its price:");
 
-        Purchase purchase = new Purchase(purchaseName, purchasePrice);
+        Purchase purchase = new Purchase(purchaseName, purchasePrice, type);
 
         //TODO ADD PURCHASE TO THE LIST
         manager.registerPurchase(purchase);
