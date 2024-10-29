@@ -1,8 +1,8 @@
-package budget;
+package budget.menu;
 
-import budget.Utility.KeyboardUtil;
-
-import java.util.List;
+import budget.PurchaseType;
+import budget.TransactionManager;
+import budget.utility.KeyboardUtil;
 
 public class ListOfPurchasesMenu {
     private final TransactionManager manager;

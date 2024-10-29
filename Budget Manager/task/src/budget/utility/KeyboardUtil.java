@@ -1,4 +1,4 @@
-package budget.Utility;
+package budget.utility;
 
 import java.util.Scanner;
 

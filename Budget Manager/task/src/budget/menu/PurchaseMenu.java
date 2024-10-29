@@ -1,6 +1,9 @@
-package budget;
+package budget.menu;
 
-import budget.Utility.KeyboardUtil;
+import budget.AddPurchase;
+import budget.PurchaseType;
+import budget.TransactionManager;
+import budget.utility.KeyboardUtil;
 
 public class PurchaseMenu {
     private final TransactionManager manager;

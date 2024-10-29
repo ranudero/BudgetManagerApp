@@ -1,6 +1,6 @@
 package budget;
 
-import budget.Utility.KeyboardUtil;
+import budget.utility.KeyboardUtil;
 
 public class AddPurchase {
 

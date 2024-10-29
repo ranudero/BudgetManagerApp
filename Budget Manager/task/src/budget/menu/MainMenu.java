@@ -1,6 +1,7 @@
-package budget;
+package budget.menu;
 
-import budget.Utility.KeyboardUtil;
+import budget.TransactionManager;
+import budget.utility.KeyboardUtil;
 
 import java.util.Scanner;
 

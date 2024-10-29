@@ -1,6 +1,6 @@
 package budget;
 
-import java.util.Scanner;
+import budget.menu.MainMenu;
 
 public class Main {
     public static void main(String[] args) {
