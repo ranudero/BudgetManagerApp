@@ -9,11 +9,13 @@ public class MainMenu {
     private final TransactionManager manager;
     private final PurchaseMenu purchaseMenu;
     private final ListOfPurchasesMenu listOfPurchasesMenu;
+    private final SaveMenu saveMenu;
 
     public MainMenu() {
         manager = new TransactionManager();
         purchaseMenu = new PurchaseMenu(manager);
         listOfPurchasesMenu = new ListOfPurchasesMenu(manager);
+        saveMenu = new SaveMenu(manager);
 
     }
 
@@ -46,6 +48,9 @@ public class MainMenu {
                 break;
             case 4:
                 System.out.println("\nBalance: $" + manager.getBalance());
+                break;
+            case 5:
+                saveMenu.show();
                 break;
             case 0:
                 exitApplication();

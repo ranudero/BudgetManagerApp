@@ -43,7 +43,7 @@ public class ListOfPurchasesMenu {
     }
 
     public void showAll() {
-        manager.getPurchases();
+        manager.printPurchases();
     }
 
     private void showNoPurchases() {

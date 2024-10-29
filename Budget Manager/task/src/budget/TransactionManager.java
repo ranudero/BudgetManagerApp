@@ -16,6 +16,10 @@ public class TransactionManager {
         this.purchases = new ArrayList<>();
     }
 
+    public ArrayList<Purchase> getPurchases() {
+        return purchases;
+    }
+
     public void registerPurchase(Purchase purchase) {
         this.purchases.add(purchase);
         this.totalExpenses += purchase.getPrice();
@@ -33,7 +37,7 @@ public class TransactionManager {
         return balance;
     }
 
-    public void getPurchases() {
+    public void printPurchases() {
 
             System.out.println("\nPurchase list:");
             for (Purchase purchase : purchases) {
@@ -68,4 +72,6 @@ public class TransactionManager {
     public boolean hasPurchases() {
         return !purchases.isEmpty();
     }
+
+
 }
