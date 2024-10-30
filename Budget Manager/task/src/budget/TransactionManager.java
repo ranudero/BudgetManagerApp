@@ -20,9 +20,13 @@ public class TransactionManager {
         return purchases;
     }
 
-    public void registerPurchase(Purchase purchase) {
+    public void addPurchase(Purchase purchase) {
         this.purchases.add(purchase);
         this.totalExpenses += purchase.getPrice();
+    }
+
+    public void registerPurchase(Purchase purchase) {
+        addPurchase(purchase);
         this.balance -= purchase.getPrice();
         System.out.println("Purchase was added!");
     }
@@ -37,13 +41,15 @@ public class TransactionManager {
         return balance;
     }
 
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
     public void printPurchases() {
 
             System.out.println("\nPurchase list:");
             for (Purchase purchase : purchases) {
-                System.out.print(purchase.getName());
-                System.out.print(" $");
-                System.out.println(purchase.getPrice());
+                System.out.println(purchase);
             }
             System.out.println("Total sum: $" + totalExpenses);
 
@@ -51,20 +57,14 @@ public class TransactionManager {
 
     public void getPurchasesByType(PurchaseType type) {
         ArrayList<Purchase> purchasesByType = new ArrayList<>();
-        for (Purchase purchase : purchases) {
-            if (purchase.getType() == type) {
-                purchasesByType.add(purchase);
-            }
-        }
+        purchases.stream()
+                .filter(p -> p.getType().equals(type))
+                .forEach(purchasesByType::add);
         if (purchasesByType.isEmpty()) {
             System.out.println("\nPurchase list is empty!");
         } else {
             System.out.println("\n" + type.getName() + ":");
-            for (Purchase purchase : purchasesByType) {
-                System.out.print(purchase.getName());
-                System.out.print(" $");
-                System.out.println(purchase.getPrice());
-            }
+            purchasesByType.forEach(System.out::println);
             System.out.println("Total sum: $" + purchasesByType.stream().mapToDouble(Purchase::getPrice).sum());
         }
     }

@@ -12,7 +12,7 @@ public class SaveMenu {
 
     public void show() {
         TransactionFile transactionFile = new TransactionFile(manager.getPurchases());
-        transactionFile.save();
+        transactionFile.save(manager);
         System.out.println("\nPurchases were saved!\n");
     }
 }

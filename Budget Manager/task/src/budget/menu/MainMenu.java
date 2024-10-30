@@ -10,12 +10,14 @@ public class MainMenu {
     private final PurchaseMenu purchaseMenu;
     private final ListOfPurchasesMenu listOfPurchasesMenu;
     private final SaveMenu saveMenu;
+    private final LoadMenu loadMenu;
 
     public MainMenu() {
         manager = new TransactionManager();
         purchaseMenu = new PurchaseMenu(manager);
         listOfPurchasesMenu = new ListOfPurchasesMenu(manager);
         saveMenu = new SaveMenu(manager);
+        loadMenu = new LoadMenu(manager);
 
     }
 
@@ -51,6 +53,9 @@ public class MainMenu {
                 break;
             case 5:
                 saveMenu.show();
+                break;
+            case 6:
+                loadMenu.show();
                 break;
             case 0:
                 exitApplication();

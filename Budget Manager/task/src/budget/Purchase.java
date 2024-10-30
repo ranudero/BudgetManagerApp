@@ -22,4 +22,9 @@ public class Purchase {
     public PurchaseType getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+        return "%s $%.2f".formatted(name, price);
+    }
 }

@@ -1,3 +1,4 @@
-Pants
-75.0
-Clothes
+985.0
+Cinema
+15.0
+ENTERTAINMENT

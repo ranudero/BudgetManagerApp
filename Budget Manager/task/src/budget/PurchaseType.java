@@ -15,4 +15,5 @@ public enum PurchaseType {
     public String getName() {
         return name;
     }
+
 }
