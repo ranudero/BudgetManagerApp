@@ -11,6 +11,7 @@ public class MainMenu {
     private final ListOfPurchasesMenu listOfPurchasesMenu;
     private final SaveMenu saveMenu;
     private final LoadMenu loadMenu;
+    private final SortMenu sortMenu;
 
     public MainMenu() {
         manager = new TransactionManager();
@@ -18,6 +19,7 @@ public class MainMenu {
         listOfPurchasesMenu = new ListOfPurchasesMenu(manager);
         saveMenu = new SaveMenu(manager);
         loadMenu = new LoadMenu(manager);
+        sortMenu = new SortMenu(manager);
 
     }
 
@@ -29,6 +31,7 @@ public class MainMenu {
         System.out.println("4) Balance");
         System.out.println("5) Save");
         System.out.println("6) Load");
+        System.out.println("7) Analyze (sort)");
         System.out.println("0) Exit");
         handleUserInput();
     }
@@ -56,6 +59,9 @@ public class MainMenu {
                 break;
             case 6:
                 loadMenu.show();
+                break;
+            case 7:
+                sortMenu.show();
                 break;
             case 0:
                 exitApplication();

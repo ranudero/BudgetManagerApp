@@ -16,7 +16,5 @@ public class LoadMenu {
         transactionFile.load(manager);
         System.out.println("\nPurchases were loaded!\n");
 
-//        for (Purchase purchase : transactionFile.getPurchases()) {
-//            manager.addPurchase(purchase);
     }
 }
