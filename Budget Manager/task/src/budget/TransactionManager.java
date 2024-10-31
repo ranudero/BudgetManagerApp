@@ -1,5 +1,7 @@
 package budget;
 
+import budget.utility.KeyboardUtil;
+
 import java.util.ArrayList;
 
 public class TransactionManager {
@@ -74,4 +76,42 @@ public class TransactionManager {
     }
 
 
+    public void sortAll() {
+        if (!hasPurchases()) {
+            System.out.println("\nPurchase list is empty!");
+            return;
+        }
+        purchases.sort((p1, p2) -> Double.compare(p2.getPrice(), p1.getPrice()));
+        printPurchases();
+    }
+
+    public void sortCertainType() {
+        System.out.println("\nChoose the type of purchase");
+        for (PurchaseType purchaseType : PurchaseType.values()) {
+            System.out.println(purchaseType.ordinal() + 1 + ") " + purchaseType.getName());
+        }
+        int purchaseTypeChoice = KeyboardUtil.getInputInt();
+        PurchaseType type = PurchaseType.values()[purchaseTypeChoice - 1];
+        getPurchasesByType(type);
+    }
+
+    public void sortByType() {
+        System.out.println("\n");
+        ArrayList<Purchase> totalPurchasesByType = new ArrayList<>();
+        for (PurchaseType purchaseType : PurchaseType.values()) {
+            ArrayList<Purchase> purchasesByType = new ArrayList<>();
+            purchases.stream()
+                    .filter(p -> p.getType().equals(purchaseType))
+                    .forEach(purchasesByType::add);
+            double sumByType = purchasesByType.stream().mapToDouble(Purchase::getPrice).sum();
+            totalPurchasesByType.add(new Purchase(purchaseType.getName(), sumByType, purchaseType));
+
+        }
+        totalPurchasesByType.sort((p1, p2) -> Double.compare(p2.getPrice(), p1.getPrice()));
+        for (Purchase purchase : totalPurchasesByType) {
+            String output = "%s - $%.2f".formatted(purchase.getName(), purchase.getPrice());
+            System.out.println(output);
+        }
+
+    }
 }

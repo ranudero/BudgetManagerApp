@@ -18,13 +18,13 @@ public class SortMenu {
             int choice = KeyboardUtil.getInputInt();
             switch (choice) {
                 case 1:
-                    System.out.println("Sort all purchases");
+                    sortAll();
                     break;
                 case 2:
-                    System.out.println("Sort by type");
+                    sortByType();
                     break;
                 case 3:
-                    System.out.println("Sort certain type");
+                    sortCertainType();
                     break;
                 case 4:
                     keepGoing = false;
@@ -36,11 +36,23 @@ public class SortMenu {
 
     }
 
+    private void sortByType() {
+        manager.sortByType();
+    }
+
     private void printMenu() {
         System.out.println("\nHow do you want to sort?");
         System.out.println("1) Sort all purchases");
         System.out.println("2) Sort by type");
         System.out.println("3) Sort certain type");
         System.out.println("4) Back");
+    }
+
+    private void sortAll() {
+        manager.sortAll();
+    }
+
+    private void sortCertainType() {
+        manager.sortCertainType();
     }
 }
